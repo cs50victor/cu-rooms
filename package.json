@@ -1,0 +1,62 @@
+{
+  "name": "nextwin",
+  "description": "Easy Next.js & Twin.macro Web dev Template .",
+  "version": "0.1.0",
+  "private": true,
+  "author": {
+    "name": "Victor A.",
+    "url": "https://victoruniverse.com"
+  },
+  "scripts": {
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "dev": "yarn lint && yarn format && next dev -p 8000",
+    "local": "yarn format && yarn lint && vercel dev --listen 8080",
+    "format": "yarn prettier -w --loglevel silent \"**/*.+(js|jsx|ts|tsx|json|md)\""
+  },
+  "dependencies": {
+    "@emotion/css": "^11.5.0",
+    "@emotion/react": "^11.7.0",
+    "@emotion/server": "^11.4.0",
+    "@emotion/styled": "^11.6.0",
+    "@headlessui/react": "^1.4.1",
+    "@hookform/resolvers": "^2.8.0",
+    "next": "11.1.3",
+    "next-seo": "^4.28.1",
+    "next-themes": "^0.0.15",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-hook-form": "^7.15.2",
+    "react-icons": "^4.3.1",
+    "react-use": "^17.3.1",
+    "swr": "^1.1.1",
+    "twin.macro": "^2.8.2",
+    "use-sound": "^4.0.1",
+    "yup": "^0.32.9"
+  },
+  "devDependencies": {
+    "@emotion/babel-plugin": "^11.3.0",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
+    "@tailwindcss/forms": "^0.4.0",
+    "@tailwindcss/line-clamp": "^0.3.0",
+    "babel-plugin-macros": "^3.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-next": "^11.1.2",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.4.0",
+    "react-is": "^17.0.2",
+    "tailwindcss": "^3.0.15"
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "doubleQuote": true,
+    "tabWidth": 2,
+    "printWidth": 90,
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "jsxBracketSameLine": false,
+    "semi": false
+  }
+}
