@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router"
 import tw, { styled, css } from "twin.macro"
 import Link from "next/link"
 import MarketingContainer from "@layouts/MarketingContainer"
@@ -95,7 +95,7 @@ export default function Login() {
           </div>
           <Button
             type="button"
-            onClick={() => router.push('/buildings')}
+            onClick={() => router.push("/buildings")}
             // type="submit"
             tw="flex items-center justify-center"
             disabled={!!isLoading}
