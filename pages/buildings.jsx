@@ -8,7 +8,7 @@ import UserUIContainer from "@layouts/UserUIContainer"
 
 const buildings = [
   { name: "student center", img: "/static/student center.jpeg" },
-  { name: "rehall", img: "/static/rehall.jpeg" },
+  { name: "rahall", img: "/static/rehall.jpeg" },
   { name: "university point", img: "/static/university point.jpeg" },
   { name: "art", img: "/static/art.jpeg" },
   { name: "admin", img: "/static/admin.jpeg" },
