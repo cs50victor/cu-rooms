@@ -23,7 +23,7 @@ export default function MarketingContainer({
   const [isOpen, setIsOpen] = useState(false)
   const { min } = useMinScreen()
   const router = useRouter()
-  const url = `https://starter.co${router.route}`
+  const url = `https://cu-rooms.vercel.app${router.route}`
 
   const closeModal = () => setIsOpen(false)
 
@@ -64,31 +64,17 @@ export default function MarketingContainer({
           {!noHeaderNav && (
             <>
               <div tw="inline-flex items-center space-x-2.5 font-semibold sm:(hidden)">
-                <Link href="/signup" passHref>
-                  <Button as="a" tw="relative px-2 py-2 ">
-                    Sign Up
-                  </Button>
-                </Link>
                 <button
                   tw="relative outline-none appearance-none ring-0"
                   onClick={(e) => openModal(e)}
                 >
-                  <HiOutlineMenuAlt4 width={25} tw="h-10 text-neutral-7" />
+                  <HiOutlineMenuAlt4 tw="h-20" />
                 </button>
               </div>
               <div tw="hidden sm:(inline-block space-x-2.5 font-semibold )">
                 <Link href="/signin" passHref>
-                  <Button
-                    as="a"
-                    tw="px-3 py-2 bg-neutral-1  hocus:(bg-neutral-2)"
-                    variant="gray"
-                  >
+                  <Button as="a" tw="px-3 py-2">
                     Sign In
-                  </Button>
-                </Link>
-                <Link href="/signup" passHref>
-                  <Button as="a" tw="px-3 py-2" variant="primary">
-                    Sign Up
                   </Button>
                 </Link>
               </div>
@@ -136,11 +122,6 @@ const MenuModal = ({ isOpen, closeModal }) => {
             <div tw="mb-6 flex items-center justify-between py-1 px-3 border-b border-neutral-2">
               <Logo showName />
               <div className="nav-link" tw="flex items-center">
-                <Link href="/signup" passHref>
-                  <Button as="a" variant="primary" tw="px-2 py-2 max-w-sm mr-2">
-                    Sign Up
-                  </Button>
-                </Link>
                 <button
                   ref={defaultFocus}
                   tw="hocus:(outline-none appearance-none)"
@@ -153,13 +134,8 @@ const MenuModal = ({ isOpen, closeModal }) => {
             <div tw="flex flex-col space-y-5 w-5/6 mx-auto">
               {/*other content here */}
               <Link href="/signin" passHref>
-                <Button as="a" variant="inverted" tw="px-3 py-2 w-full">
-                  Sign In
-                </Button>
-              </Link>
-              <Link href="/signup" passHref>
                 <Button as="a" variant="primary" tw="px-3 py-2 w-full">
-                  Sign Up
+                  Sign In
                 </Button>
               </Link>
             </div>

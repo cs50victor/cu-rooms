@@ -3,33 +3,23 @@ import tw, { css } from "twin.macro"
 import Link from "next/link"
 import Image from "next/image"
 import Router, { useRouter } from "next/router"
-import { LightningBoltIcon, CogIcon, UserIcon } from "@heroicons/react/solid"
-import { PlusSmIcon, CurrencyDollarIcon } from "@heroicons/react/outline"
 import { Popover, Transition } from "@headlessui/react"
 import { Button, ThemeChanger, MarketingFooter, Logo } from "@components"
 import { defaultImageBlur } from "@utils/imageBlur"
 import { NextSeo } from "next-seo"
+import {
+  HiLightningBolt,
+  HiCog,
+  HiUser,
+  HiOutlinePlusSm,
+  HiOutlineCurrencyDollar,
+} from "react-icons/hi"
 
 const options = [
   {
-    name: "Tasks",
-    href: "/#",
-    icon: LightningBoltIcon,
-  },
-  {
     name: "Profile",
     href: "/#",
-    icon: UserIcon,
-  },
-  {
-    name: "Coins",
-    href: "/#",
-    icon: CurrencyDollarIcon,
-  },
-  {
-    name: "Settings",
-    href: "/#",
-    icon: CogIcon,
+    icon: HiUser,
   },
 ]
 
@@ -37,7 +27,7 @@ export default function UserUIContainer({ children, footer, footerNav, title }) 
   const router = useRouter()
   const [open, setOpen] = useState(false)
   const [openTaskModal, setOpenTaskModal] = useState(false)
-  const url = `https://starter.co${router.route}`
+  const url = `https://cu-rooms.vercel.app${router.route}`
 
   const notify = () =>
     toast.success("View task in your profile.", {
@@ -84,14 +74,6 @@ export default function UserUIContainer({ children, footer, footerNav, title }) 
             <Logo url="/home" showName />
           </span>
           <div tw="inline-flex items-center justify-end">
-            <button
-              type="button"
-              onClick={() => setOpenTaskModal(true)}
-              tw="inline-flex items-center py-1 px-2 font-semibold text-neutral-2 bg-neutral-9 rounded-xl w-max space-x-1"
-            >
-              <span tw="text-sm">Create Task</span>
-              <PlusSmIcon width={18} />
-            </button>
             <Popover tw="relative min-width[40px]">
               {({ open }) => (
                 <Fragment>
@@ -145,12 +127,12 @@ export default function UserUIContainer({ children, footer, footerNav, title }) 
                             <hr tw="opacity-80 my-1" />
                           </div>
                         ))}
-                        <div
+                        {/* <div
                           tw="inline-flex items-center w-full p-1 transition duration-150
                               ease-in-out rounded-brand hocus:(outline-none)"
                         >
                           <ThemeChanger />
-                        </div>
+                        </div> */}
                         {/*<hr tw="opacity-80 my-1" />*/}
                       </div>
                     </Popover.Panel>

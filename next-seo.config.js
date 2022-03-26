@@ -1,18 +1,18 @@
-const title = "starter"
-const defaultTitle = "starter."
-const titleTemplate = "%s | starter."
-const description = "starter."
+const title = "cu-rooms"
+const defaultTitle = "cu-rooms."
+const titleTemplate = "%s | cu-rooms."
+const description = "cu-rooms."
 
 const SEO = {
   defaultTitle,
   titleTemplate,
   description,
-  canonical: "https://starter.co",
+  canonical: "https://cu-rooms.vercel.app",
   openGraph: {
     type: "website",
     locale: "en_IE",
-    url: "https://starter.co",
-    site_name: "starter",
+    url: "https://cu-rooms.vercel.app",
+    site_name: "cu-rooms",
     description,
     images: [
       {

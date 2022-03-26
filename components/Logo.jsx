@@ -3,7 +3,7 @@ import tw from "twin.macro"
 
 const Logo = ({ url, width, height, showName }) => {
   const currLink = url || "/"
-  const websiteName = "starter"
+  const websiteName = "CU Rooms"
   return (
     <Link href={currLink} passHref>
       <a className="nav-title" tw="font-hero text-neutral-9 inline-flex items-center">
