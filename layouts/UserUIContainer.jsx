@@ -71,7 +71,7 @@ export default function UserUIContainer({ children, footer, footerNav, title }) 
       >
         <nav tw="flex items-center w-full max-w-screen-lg px-2 mx-auto justify-between">
           <span>
-            <Logo url="/home" showName />
+            <Logo url="/buildings" showName />
           </span>
           <div tw="inline-flex items-center justify-end">
             <Popover tw="relative min-width[40px]">

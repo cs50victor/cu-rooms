@@ -1,8 +1,4 @@
-## v2.0
+# Setup Instructions
 
-```
-to use this repo
-
-npx degit https://github.com/cs50victor/nextwin folder-name
-
-```
+- clone this repo
+- run yarn && yarn dev
