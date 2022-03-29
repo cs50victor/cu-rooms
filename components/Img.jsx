@@ -9,7 +9,7 @@ export default function Img(props) {
   return (
     <Image
       css={[
-        tw`duration-200 ease-in-out`,
+        tw`duration-300 ease-in`,
         isLoading && tw`motion-safe:(animate-pulse) scale-105`,
       ]}
       src={props.src}
