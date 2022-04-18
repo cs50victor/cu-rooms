@@ -18,12 +18,10 @@ const buildings = [
 
 const BuildingCard = ({ building }) => {
   const { img, name, link } = building
-
-//a tw bg-neutral-1
   
   return (
     <Link href={`/buildings/${link}`} passHref>
-      <a tw="w-full p-2 text-left rounded transition ease-in-out hover:(bg-cyan-600)">
+      <a tw="w-full p-2 text-left rounded transition ease-in-out hover:(bg-neutral-1)">
         <span tw="block px-2 py-2 my-6 font-semibold capitalize bg-neutral-1 rounded-lg text-lg ">
           {name}
         </span>
