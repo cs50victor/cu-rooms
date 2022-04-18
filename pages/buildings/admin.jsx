@@ -28,6 +28,7 @@ const rooms = [
 export default function Admin() {
   return (
     <UserUIContainer title="Admin Building Rooms" headerBorder footer>
+    <link href= "index"> "Back" </link>
       <main tw="h-full">
         <section tw="max-w-screen-md mx-auto text-center my-28">
           <h1 className="h2-headline" tw="mt-20 pb-5">
