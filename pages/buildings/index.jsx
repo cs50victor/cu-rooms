@@ -4,14 +4,11 @@ import Link from "next/link"
 import { Img } from "@components"
 import UserUIContainer from "@layouts/UserUIContainer"
 
+//adds the name and image for each building button
 const buildings = [
   { name: "student center", link: "student-center", img: "/static/student center.jpeg" },
   { name: "rahall", link: "rahall", img: "/static/rehall.jpeg" },
-  {
-    name: "university point",
-    link: "university-point",
-    img: "/static/university point.jpeg",
-  },
+  { name: "university point", link: "university-point", img: "/static/university point.jpeg" },
   { name: "art", link: "art", img: "/static/art.jpeg" },
   { name: "admin", link: "admin", img: "/static/admin.jpeg" },
   { name: "science", link: "science", img: "/static/science.jpeg" },
@@ -22,9 +19,11 @@ const buildings = [
 const BuildingCard = ({ building }) => {
   const { img, name, link } = building
 
+//a tw bg-neutral-1
+  
   return (
     <Link href={`/buildings/${link}`} passHref>
-      <a tw="w-full p-2 text-left rounded transition ease-in-out hover:(bg-neutral-1)">
+      <a tw="w-full p-2 text-left rounded transition ease-in-out hover:(bg-cyan-600)">
         <span tw="block px-2 py-2 my-6 font-semibold capitalize bg-neutral-1 rounded-lg text-lg ">
           {name}
         </span>
