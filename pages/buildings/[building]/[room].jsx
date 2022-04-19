@@ -6,9 +6,8 @@ import { BreadCrumb, StyledLink } from "@components"
 import { UserUIContainer } from "@layouts/UserUIContainer"
 import { buildings, nameToSlug, slugToName } from "@utils/buildings"
 
-export default function Room({ buildingData }) {
+export default function Room({ room, name }) {
   const { asPath } = useRouter()
-  const { room, name } = buildingData
   const pageHeading = room?.toLowerCase().includes("room") ? room : `Room -  ${room}`
 
   return (
@@ -27,27 +26,28 @@ export default function Room({ buildingData }) {
 
 Room.theme = "light"
 
-export async function getStaticPaths() {
-  const allRooms = []
+export const getStaticPaths = async () => {
+  const paths = []
   buildings.forEach((b) => {
     b.rooms.forEach((room) => {
-      allRooms.push({ params: { building: nameToSlug(b.name), room: nameToSlug(room) } })
+      paths.push({ params: { building: nameToSlug(b.name), room: nameToSlug(room) } })
     })
   })
   return {
     // get an array of all possible building links/slugs
-    paths: allRooms,
+    paths,
     fallback: false,
   }
 }
 
-export async function getStaticProps({ params }) {
+export const getStaticProps = async ({ params }) => {
   // get data from the requested building
-  const buildingData = buildings.find((b) => nameToSlug(b.name) === params.building)
-  buildingData.room = buildingData.rooms.filter(
+  const buildingData = await buildings.find((b) => nameToSlug(b.name) === params.building)
+  console.log(`buildingData for`, buildingData)
+
+  buildingData["room"] = buildingData.rooms.filter(
     (room) => nameToSlug(room) === params.room,
   )[0]
-  delete buildingData.rooms
 
-  return { props: { buildingData } }
+  return { props: { ...buildingData } }
 }

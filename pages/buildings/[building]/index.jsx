@@ -6,9 +6,8 @@ import { BreadCrumb, StyledLink } from "@components"
 import { UserUIContainer } from "@layouts/UserUIContainer"
 import { buildings, nameToSlug } from "@utils/buildings"
 
-export default function Building({ buildingData }) {
+export default function Building({ heading, rooms, name }) {
   const { asPath } = useRouter()
-  const { heading, rooms, name } = buildingData
   const pageHeading = heading || `${name} Rooms`
 
   return (
@@ -20,7 +19,7 @@ export default function Building({ buildingData }) {
             {pageHeading}
           </h1>
           <ul tw="list-inside text-left text-lg font-hero grid gap-2 sm:(grid-cols-2)">
-            {rooms?.map((room) => (
+            {rooms.map((room) => (
               <li key={room}>
                 <Link href={`${asPath}/${nameToSlug(room)}`} passHref>
                   <StyledLink
@@ -42,16 +41,18 @@ export default function Building({ buildingData }) {
 
 Building.theme = "light"
 
-export async function getStaticPaths() {
+export const getStaticPaths = async () => {
+  // get an array of all possible building links/slugs
+  const paths = await buildings.map((b) => ({ params: { building: nameToSlug(b.name) } }))
+
   return {
-    // get an array of all possible building links/slugs
-    paths: buildings.map((b) => ({ params: { building: nameToSlug(b.name) } })),
-    fallback: "blocking",
+    paths,
+    fallback: false,
   }
 }
 
-export async function getStaticProps({ params }) {
+export const getStaticProps = async ({ params }) => {
   // get data from the requested building
-  const buildingData = buildings.find((b) => nameToSlug(b.name) === params.building)
-  return { props: { buildingData } }
+  const buildingData = await buildings.find((b) => nameToSlug(b.name) === params.building)
+  return { props: { ...buildingData } }
 }
