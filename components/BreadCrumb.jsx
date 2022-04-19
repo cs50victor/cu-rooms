@@ -15,7 +15,7 @@ export default function BreadCrumb({ routesArr }) {
               <a
                 css={[
                   tw`inline-flex items-center text-base font-semibold capitalize`,
-                  route === routesArr.at(-1)
+                  i === routesArr.length - 1
                     ? tw`text-neutral-5 pointer-events-none`
                     : tw`text-neutral-7 hover:(text-neutral-8)`,
                 ]}
