@@ -8,7 +8,7 @@ const Logo = ({ url, width, height, showName }) => {
   return (
     <Link href={currLink} passHref>
       <a className="nav-title" tw="font-hero text-neutral-9 inline-flex items-center ">
-        <SvgLogo width={100}/>
+        <SvgLogo width={100} />
         {showName && <span>{SEO.defaultTitle}</span>}
       </a>
     </Link>
