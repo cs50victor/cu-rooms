@@ -59,11 +59,12 @@ const customStyles = css`
   }
 
   :root {
-    --brand-lighter: ${hToR(colors[1])};
-    --brand-light: ${hToR(colors[3])};
-    --brand-base: ${hToR(colors[6])};
-    --brand-dark: ${hToR(colors[7])};
-    --brand-darker: ${hToR(colors[9])};
+    --brand-lighter: ${theme("colors.red.500")};
+    --brand-light: ${theme("colors.red.600")};
+    --brand-base: ${theme("colors.red.700")};
+    --brand-dark: ${theme("colors.red.800")};
+    --brand-darker: ${theme("colors.red.900")};
+
     --background: ${hToR(colors[0])};
     --background-secondary: ${hToR(colors[2])};
     --neutral-yang: ${hToR(colors[0])};

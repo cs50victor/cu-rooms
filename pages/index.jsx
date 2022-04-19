@@ -99,7 +99,6 @@ export default function Home() {
             // type="submit"
             tw="flex items-center justify-center"
             disabled={!!isLoading}
-            variant="primary"
             isLarge
           >
             {isLoading ? <LoadingCircle /> : "Continue with Email"}

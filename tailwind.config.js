@@ -14,14 +14,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        lime: colors.lime,
+        violet: colors.violet,
+        cyan: colors.cyan,
+        pink: colors.pink,
         amber: colors.amber,
         gray: colors.zinc, //.slate,.gray, .zinc, .neutral
         brand: {
-          lighter: withOpacity("--brand-lighter"),
-          light: withOpacity("--brand-light"),
-          DEFAULT: withOpacity("--brand-base"),
-          dark: withOpacity("--brand-dark"),
-          darker: withOpacity("--brand-darker"),
+          lighter: "var(--brand-lighter)",
+          light: "var(--brand-light)",
+          DEFAULT: "var(--brand-base)",
+          dark: "var(--brand-dark)",
+          darker: "var(--brand-darker)",
         },
         neutral: {
           yang: withOpacity("--neutral-yang"),
@@ -43,7 +47,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["Inter", "SF Pro Text", "-apple-system", ...fontFamily.sans],
-        hero: ["Radial", "SF Pro Text", "-apple-system", ...fontFamily.sans],
+        hero: ["Radial", "Inter", "SF Pro Text", "-apple-system", ...fontFamily.sans],
       },
       borderRadius: {
         brand: "9px",
@@ -56,7 +60,7 @@ module.exports = {
   },
   plugins: [
     require("@tailwindcss/aspect-ratio"),
-    require("@tailwindcss/forms"),
     require("@tailwindcss/line-clamp"),
+    require("@tailwindcss/forms"),
   ],
 }

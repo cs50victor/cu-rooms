@@ -1,12 +1,8 @@
 {
-  "name": "nextwin",
-  "description": "Easy Next.js & Twin.macro Web dev Template .",
+  "name": "cu-rooms",
+  "description": "concord university room reservation website.",
   "version": "0.1.0",
   "private": true,
-  "author": {
-    "name": "Victor A.",
-    "url": "https://victoruniverse.com"
-  },
   "scripts": {
     "build": "next build",
     "start": "next start",

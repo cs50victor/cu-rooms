@@ -1,15 +1,15 @@
 import tw, { styled } from "twin.macro"
 
-const Button = styled.button(({ variant = "primary", isSmall, isLarge, isBold }) => [
+const Button = styled.button(({ variant, isSmall, isLarge, isBold }) => [
   // The common button styles added with the tw import
   tw`   p-3 rounded-brand w-full
         text-white font-medium tracking-tight
         transform duration-200 ease-in-out
-        bg-brand-dark
+        bg-brand-darker 
         text-center
         outline-none
         ring-0
-        hocus:(bg-brand ring-0 outline-none appearance-none)
+        hocus:(bg-brand-dark ring-0 outline-none appearance-none)
         disabled:(
           cursor-not-allowed opacity-60 
           appearance-none ring-0 outline-none

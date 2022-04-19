@@ -2,30 +2,20 @@ import { useEffect, useState } from "react"
 import tw from "twin.macro"
 import Link from "next/link"
 import { Img } from "@components"
-import UserUIContainer from "@layouts/UserUIContainer"
-
-//adds the name and image for each building button
-const buildings = [
-  { name: "student center", link: "student-center", img: "/static/student center.jpeg" },
-  { name: "rahall", link: "rahall", img: "/static/rehall.jpeg" },
-  { name: "university point", link: "university-point", img: "/static/university point.jpeg" },
-  { name: "art", link: "art", img: "/static/art.jpeg" },
-  { name: "admin", link: "admin", img: "/static/admin.jpeg" },
-  { name: "science", link: "science", img: "/static/science.jpeg" },
-  { name: "carter", link: "carter", img: "/static/carter.jpeg" },
-  { name: "library", link: "library", img: "/static/library.jpeg" },
-]
+import { UserUIContainer } from "@layouts/UserUIContainer"
+import { buildings, nameToSlug } from "@utils/buildings"
 
 const BuildingCard = ({ building }) => {
-  const { img, name, link } = building
-  
+  const { img, name } = building
+  const slug = nameToSlug(name)
+
   return (
-    <Link href={`/buildings/${link}`} passHref>
+    <Link href={`/buildings/${slug}`} passHref>
       <a tw="w-full p-2 text-left rounded transition ease-in-out hover:(bg-neutral-1)">
         <span tw="block px-2 py-2 my-6 font-semibold capitalize bg-neutral-1 rounded-lg text-lg ">
           {name}
         </span>
-        <div tw="relative h-40 rounded-t-lg">
+        <div tw="relative h-40 rounded-lg">
           <Img objectFit={"cover"} tw="rounded-lg" layout={"fill"} src={img} alt={name} />
         </div>
       </a>
@@ -33,7 +23,7 @@ const BuildingCard = ({ building }) => {
   )
 }
 
-export default function Buildings() {
+export default function Buildings({ allBuildings }) {
   return (
     <UserUIContainer title="Buildings" headerBorder footer>
       <main tw="h-full">
@@ -46,7 +36,7 @@ export default function Buildings() {
                 grid gap-4 grid-cols-2 sm:(grid-cols-3) lg:(grid-cols-4)
                 "
           >
-            {buildings.map((building) => (
+            {allBuildings?.map((building) => (
               <BuildingCard building={building} key={building.name} />
             ))}
           </div>
@@ -54,6 +44,17 @@ export default function Buildings() {
       </main>
     </UserUIContainer>
   )
+}
+
+// This gets called on every request
+export async function getServerSideProps() {
+  // Fetch data from external API [database]
+  // const res = await fetch(`https://.../data`)
+  // Temporary getting data from local file
+  const allBuildings = buildings
+
+  // Pass data to the page via props
+  return { props: { allBuildings } }
 }
 
 Buildings.theme = "light"
