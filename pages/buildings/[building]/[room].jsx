@@ -43,7 +43,6 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({ params }) => {
   // get data from the requested building
   const buildingData = await buildings.find((b) => nameToSlug(b.name) === params.building)
-  console.log(`buildingData for`, buildingData)
 
   buildingData["room"] = buildingData.rooms.filter(
     (room) => nameToSlug(room) === params.room,
