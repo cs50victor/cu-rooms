@@ -37,7 +37,7 @@ export async function getStaticPaths() {
   return {
     // get an array of all possible building links/slugs
     paths: allRooms,
-    fallback: "blocking",
+    fallback: false,
   }
 }
 

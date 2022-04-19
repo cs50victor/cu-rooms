@@ -9,7 +9,7 @@ export default function BreadCrumb({ routesArr }) {
       aria-label="Breadcrumb"
     >
       <ol tw="inline-flex items-center space-x-1 md:(space-x-3)">
-        {routesArr.map((route, i) => (
+        {routesArr?.map((route, i) => (
           <li key={i} tw="flex items-center">
             <Link href={`/${routesArr.slice(0, i + 1).join("/")}`} passHref>
               <a
