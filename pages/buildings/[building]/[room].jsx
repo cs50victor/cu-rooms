@@ -6,7 +6,7 @@ import { Img, BreadCrumb, StyledLink, Calendar, Button } from "@components"
 import { UserUIContainer } from "@layouts/UserUIContainer"
 import { buildings, nameToSlug, slugToName } from "@utils/buildings"
 import { format } from "date-fns"
-import {HiOutlineClock} from "react-icons/hi"
+import { HiOutlineClock } from "react-icons/hi"
 
 const professors = [
   {
@@ -59,16 +59,16 @@ export default function Room({ room, name }) {
             </h1>
           </div>
           <div tw="max-w-screen-lg mx-auto my-8 px-3 flex flex-wrap">
-            <div tw="w-full lg:(w-1/2 border-r)">
+            <div tw="w-full mb-12 lg:(w-1/2 border-r mb-0)">
               <Calendar />
             </div>
             <hr />
-            <div tw="w-full lg:(w-1/2) flex flex-col items-center px-16">
+            <div tw="w-full lg:(w-1/2) flex flex-col items-center px-6">
               <Button tw="w-52">Make a reservation</Button>
               <h2 tw="font-sans my-6 border-b text-lg">
                 Current Reservations for {format(new Date(), "MMMM dd,yyyy")}
               </h2>
-              <div tw="space-y-3 text-left">
+              <div tw="space-y-1 text-left flex flex-col items-center">
                 {professors.map((professor, i) => (
                   <div tw="inline-flex items-center w-full p-3" key={i}>
                     <div tw="relative w-10 h-10 rounded-full">
@@ -84,7 +84,7 @@ export default function Room({ room, name }) {
                       <h4 tw="font-sans text-sm">{professor.name}</h4>
                       <small tw="text-neutral-6">{professor.title}</small>
                       <small tw="inline-flex space-x-2 mt-2 text-neutral-7 ">
-                        <HiOutlineClock tw="w-4 h-4"/>
+                        <HiOutlineClock tw="w-4 h-4" />
                         <span>{professor.time}</span>
                       </small>
                     </div>

@@ -1,11 +1,14 @@
 import tw, { css } from "twin.macro"
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi"
+import {format, startOfMonth, getDaysInMonth } from "date-fns"
 
 export default function Calendar() {
+  const currDate = new Date()
   const daysOfWeek = ["M", "T", "W", "T", "F", "S", "S"]
-  const dayNums = Array.from({ length: 30 }, (_, i) => i + 1)
-  const daysFromMonday = Array.from(4)
-  const currDay = new Date().getDate()
+  const firstDayOfMonth = format(startOfMonth(currDate), "EEEEE")
+  const dayNums = Array.from({ length: getDaysInMonth(currDate) }, (_, i) => i + 1)
+  const daysFromMonday = [...Array(daysOfWeek.indexOf(firstDayOfMonth)).keys()]
+  const currDayNum = currDate.getDate()
 
   return (
     <>
@@ -13,7 +16,7 @@ export default function Calendar() {
         <div tw="w-full">
           <div tw="p-2">
             <div tw="px-4 flex items-center justify-between">
-              <h1 tw="text-2xl font-bold text-neutral-8">April 2022</h1>
+              <h1 tw="text-2xl font-bold text-neutral-8">{format(currDate, "MMMM yyyy")}</h1>
               <div tw="flex items-center text-neutral-6">
                 <HiOutlineChevronLeft tw="w-5 h-5" />
                 <HiOutlineChevronRight tw="w-5 h-5" />
@@ -44,7 +47,7 @@ export default function Calendar() {
                         <div tw="px-4 py-4 cursor-pointer flex w-full justify-center">
                           <p
                             css={[
-                              currDay == dayNum
+                              currDayNum == dayNum
                                 ? tw`flex items-center justify-center font-bold p-1 text-white bg-indigo-700 rounded-full`
                                 : tw`text-neutral-5 font-medium`,
                             ]}
