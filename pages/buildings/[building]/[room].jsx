@@ -10,22 +10,16 @@ import {HiOutlineClock} from "react-icons/hi"
 
 const professors = [
   {
-    name: "Angela Addair",
-    img: "/static/addair.jpg",
-    time: "3:00pm - 4:00pm",
-    title: "Assistant Professor of Management",
+    name: "Lonnie Bowe",
+    img: "/static/bowe.jpg",
+    time: "8:00pm - 8:45pm",
+    title: "Assistant Professor of Computer Science",
   },
   {
     name: "Joseph Allen",
     img: "/static/allen.jpg",
     time: "9:15pm - 10:30pm",
     title: "Distinguished Professor of Geology/Chair",
-  },
-  {
-    name: "Lonnie Bowe",
-    img: "/static/bowe.jpg",
-    time: "8:00pm - 8:45pm",
-    title: "Assistant Professor of Computer Science",
   },
   {
     name: "Lisa Darlington",
@@ -38,6 +32,12 @@ const professors = [
     img: "/static/dietrich.jpg",
     time: "1:00pm - 1:45pm",
     title: "Assistant Professor of Computer Science",
+  },
+  {
+    name: "Angela Addair",
+    img: "/static/addair.jpg",
+    time: "3:00pm - 4:00pm",
+    title: "Assistant Professor of Management",
   },
 ]
 
